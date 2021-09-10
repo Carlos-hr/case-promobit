@@ -6,7 +6,6 @@ import GlobalStateContext from './GlobalStateContext'
 
 const GlobalState = (props) => {
     const popMovies = useRequestData(`${BASE_URL}/movie/popular`, [])
-
     const data = {popMovies}
     return (
         <GlobalStateContext.Provider value={data}>

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/HomePage/HomePage';
 import MoviesPage from '../pages/MoviesPage/MoviesPage';
 import DetailsPage from '../pages/DetailsPage/DetailsPage';
-import ErrorPage from '../pages/ErrorPage';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 
 export const Router = () => {
 	return (

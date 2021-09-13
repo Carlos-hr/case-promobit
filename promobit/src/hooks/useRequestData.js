@@ -12,7 +12,7 @@ const useRequestData = (url, initialState) => {
 					setData(res.data);
 				})
 				.catch((err) => {
-					alert(err.response.message);
+					setData(false);
 				});
 		},
 		[ url ]

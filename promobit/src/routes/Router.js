@@ -13,11 +13,11 @@ export const Router = () => {
 					<HomePage />
 				</Route>
 
-				<Route exact path="/movies/:id">
+				<Route exact path="/movie/:id">
 					<DetailsPage />
 				</Route>
 
-				<Route exact path="/movies">
+				<Route exact path="/movie">
 					<MoviesPage />
 				</Route>
 

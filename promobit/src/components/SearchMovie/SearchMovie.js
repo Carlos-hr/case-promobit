@@ -17,7 +17,7 @@ export const SearchMovie = () => {
 					<Input placeholder="Buscar filme" value={form} onChange={onChange} />
 					<InputRightElement>
 						<IconButton variant="link" icon={<CloseIcon />} onClick={clear} />
-						<IconButton marginRight="3vw" variant="link" icon={<SearchIcon />} type="submit" />
+						<IconButton mr={8} variant="link" icon={<SearchIcon />} type="submit" />
 					</InputRightElement>
 				</InputGroup>
 			</Center>

@@ -1,4 +1,4 @@
-import { Center, Container, Flex, Text } from '@chakra-ui/layout';
+import { Flex, Text } from '@chakra-ui/layout';
 import { Box, Heading, Image, Spinner } from '@chakra-ui/react';
 import React from 'react';
 import 'react-multi-carousel/lib/styles.css';
@@ -38,9 +38,11 @@ const DetailCard = () => {
 				</Flex> */}
 				<Flex justify="space-between" mt={10}>
 					<Image
+						width="10rem"
+						maxW="sm"
 						borderWidth="1px"
 						borderRadius="lg"
-						boxSize="10rem"
+						boxSize="13rem"
 						objectFit="cover"
 						size="md"
 						src={`${POSTER_URL}${data.poster_path}`}

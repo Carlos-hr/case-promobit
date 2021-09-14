@@ -2,20 +2,23 @@ import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { API_KEY } from '../constants/urls';
 
-const useRequestData = (url, initialState) => {
+const useRequestData = (url, initialState, page) => {
+	if (!page) {
+		page = 1;
+	}
 	const [ data, setData ] = useState(initialState);
 	const getData = useCallback(
 		() => {
 			axios
-				.get(url, { params: { api_key: API_KEY, language: 'pt-BR' } })
+				.get(url, { params: { api_key: API_KEY, language: 'pt-BR', page } })
 				.then((res) => {
 					setData(res.data);
 				})
-				.catch((err) => {
+				.catch(() => {
 					setData(false);
 				});
 		},
-		[ url ]
+		[page, url]
 	);
 
 	useEffect(

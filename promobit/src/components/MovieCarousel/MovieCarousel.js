@@ -2,27 +2,29 @@ import React from 'react';
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Spinner, Text } from '@chakra-ui/react';
+import { Flex, Spinner, Text } from '@chakra-ui/react';
 import { Main } from './styled';
 import { useHistory } from 'react-router';
-import { goToMovieDetails } from '../../routes/coordinator';
+import { goToMovieDetails, goToMoviesPage } from '../../routes/coordinator';
 import MovieCard from '../MovieCard/MovieCard';
+import { Button } from '@chakra-ui/button';
 
 const MovieCarousel = (props) => {
-	const { results, title } = props;
+	const { results, title, category } = props;
 	const history = useHistory();
 
 	const onClickButton = (id) => {
-		console.log(id);
 		goToMovieDetails(history, id);
+	};
+
+	const onClickViewMore = (category) => {
+		goToMoviesPage(history, category);
 	};
 
 	const poster = () => {
 		return results ? (
 			results.map((movie) => {
-				return (
-					<MovieCard key={movie.id} results={movie} onClick={onClickButton} />
-				);
+				return <MovieCard key={movie.id} results={movie} onClick={onClickButton} />;
 			})
 		) : (
 			<Spinner />
@@ -31,7 +33,12 @@ const MovieCarousel = (props) => {
 
 	return (
 		<Main>
-			<Text>{title}</Text>
+			<Flex mb={2} ml={5}>
+				<Text fontWeight="bold">{title}</Text>
+				<Button variant="link" size="sm" colorScheme="blue" onClick={() => onClickViewMore(category)} ml={3}>
+					Ver mais
+				</Button>
+			</Flex>
 			<Carousel
 				additionalTransfrom={0}
 				arrows

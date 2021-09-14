@@ -17,7 +17,7 @@ export const Router = () => {
 					<DetailsPage />
 				</Route>
 
-				<Route exact path="/movie">
+				<Route exact path="/movies/:category">
 					<MoviesPage />
 				</Route>
 

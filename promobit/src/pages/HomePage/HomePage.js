@@ -14,8 +14,8 @@ export const HomePage = () => {
 		<div>
 			<Header />
 			<SearchMovie />
-			<MovieCarousel results={pop} title={'Populares'} category={'popular'} />
-			<MovieCarousel results={topRated} title={'Melhores avaliados'} category={'top_rated'} />
+			<MovieCarousel results={pop} title={'Populares'} category={'popular'} hasButton />
+			<MovieCarousel results={topRated} title={'Melhores avaliados'} category={'top_rated'} hasButton />
 		</div>
 	);
 };

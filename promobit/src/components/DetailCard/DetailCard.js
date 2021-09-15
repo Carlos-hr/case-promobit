@@ -8,6 +8,7 @@ import useRequestData from '../../hooks/useRequestData';
 import MovieCarousel from '../MovieCarousel/MovieCarousel';
 import { Main } from './styled';
 import { StarIcon } from '@chakra-ui/icons';
+import fallback from '../../assets/fallback.png';
 
 const DetailCard = () => {
 	const params = useParams();
@@ -16,11 +17,10 @@ const DetailCard = () => {
 	const movieDetail = useRequestData(`${BASE_URL}/${id}`, []);
 	const relatedMovies = useRequestData(`${BASE_URL}/${id}/similar`, []);
 	const { data } = movieDetail;
-	console.log("data",data);
+	console.log('data', data);
 	const { results } = relatedMovies.data;
-
 	const details = () => {
-		return data.poster_path ? (
+		return data ? (
 			<Main maxW="container.lg">
 				<Flex justify="space-between" mt={10}>
 					<Image
@@ -33,6 +33,7 @@ const DetailCard = () => {
 						size="md"
 						src={`${POSTER_URL}${data.poster_path}`}
 						alt={data.title}
+						fallbackSrc={fallback}
 					/>
 					<Box ml={10}>
 						<Heading size="lg">{data.title} </Heading>

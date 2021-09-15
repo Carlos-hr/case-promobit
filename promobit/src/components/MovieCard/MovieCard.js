@@ -3,11 +3,11 @@ import 'react-multi-carousel/lib/styles.css';
 import { POSTER_URL } from '../../constants/urls';
 import { Box, Image, Spinner } from '@chakra-ui/react';
 import { StarIcon } from '@chakra-ui/icons';
+import fallback from '../../assets/fallback.png'
 
 const MovieCard = (props) => {
     
 	const { results, onClick } = props;
-
 	return results ? (
 		<Box
 			as="button"
@@ -18,7 +18,7 @@ const MovieCard = (props) => {
 			overflow="hidden"
 			onClick={() => onClick(results.id)}
 		>
-			<Image src={`${POSTER_URL}${results.poster_path}`} alt={results.title} />
+			<Image src={`${POSTER_URL}${results.poster_path}`} alt={results.title} fallbackSrc={fallback} />
 			<Box p="2">
 				<Box mt="1" fontWeight="semibold" fontSize="sm" lineHeight="tight" isTruncated>
 					{results.title}

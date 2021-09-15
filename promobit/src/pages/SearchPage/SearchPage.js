@@ -13,7 +13,6 @@ const SearchPage = () => {
 
 	const searchResult = useRequestData(`${SEARCH_URL}`, [], page, movie);
 	const { results } = searchResult.data;
-    
 	const renderError = () => {
 		if ( results !== undefined && results.length === 0) {
 			return (

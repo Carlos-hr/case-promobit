@@ -10,17 +10,15 @@ import MovieCard from '../MovieCard/MovieCard';
 import { Button } from '@chakra-ui/button';
 
 const MovieCarousel = (props) => {
-	const { results, title, category } = props;
+	const { results, title, category, hasButton } = props;
 	const history = useHistory();
 
 	const onClickDetails = (id) => {
 		goToMovieDetails(history, id);
 	};
-
 	const onClickViewMore = (category) => {
 		goToMoviesPage(history, category);
 	};
-
 	const poster = () => {
 		return results ? (
 			results.map((movie) => {
@@ -30,14 +28,21 @@ const MovieCarousel = (props) => {
 			<Spinner />
 		);
 	};
+	const renderButton = () => {
+		if (hasButton) {
+			return (
+				<Button variant="link" size="sm" colorScheme="blue" onClick={() => onClickViewMore(category)} ml={3}>
+					Ver mais
+				</Button>
+			);
+		}
+	};
 
 	return (
 		<Main>
 			<Flex mb={2} ml={5}>
 				<Text fontWeight="bold">{title}</Text>
-				<Button variant="link" size="sm" colorScheme="blue" onClick={() => onClickViewMore(category)} ml={3}>
-					Ver mais
-				</Button>
+				{renderButton()}
 			</Flex>
 			<Carousel
 				additionalTransfrom={0}

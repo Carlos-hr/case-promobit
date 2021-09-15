@@ -16,26 +16,12 @@ const DetailCard = () => {
 	const movieDetail = useRequestData(`${BASE_URL}/${id}`, []);
 	const relatedMovies = useRequestData(`${BASE_URL}/${id}/similar`, []);
 	const { data } = movieDetail;
-	console.log(data);
+	console.log("data",data);
 	const { results } = relatedMovies.data;
 
 	const details = () => {
 		return data.poster_path ? (
 			<Main maxW="container.lg">
-				{/* <Flex
-					opacity="0.8"
-				>
-					<Image
-						borderWidth="1px"
-						borderRadius="lg"
-						boxSize="10rem"
-						objectFit="cover"
-						size="md"
-						src={`${POSTER_URL}${data.backdrop_path}`}
-						alt={data.title}
-						position="absolute"
-					/>
-				</Flex> */}
 				<Flex justify="space-between" mt={10}>
 					<Image
 						width="10rem"

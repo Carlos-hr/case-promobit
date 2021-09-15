@@ -13,7 +13,7 @@ const MovieCarousel = (props) => {
 	const { results, title, category } = props;
 	const history = useHistory();
 
-	const onClickButton = (id) => {
+	const onClickDetails = (id) => {
 		goToMovieDetails(history, id);
 	};
 
@@ -24,7 +24,7 @@ const MovieCarousel = (props) => {
 	const poster = () => {
 		return results ? (
 			results.map((movie) => {
-				return <MovieCard key={movie.id} results={movie} onClick={onClickButton} />;
+				return <MovieCard key={movie.id} results={movie} onClick={onClickDetails} />;
 			})
 		) : (
 			<Spinner />

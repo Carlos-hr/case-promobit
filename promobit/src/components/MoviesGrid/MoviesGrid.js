@@ -23,7 +23,7 @@ const MovieGrid = (props) => {
 	};
 	return (
 		<Flex maxW="container.xl" justifyContent="center" mt={10}>
-			<SimpleGrid columns={[ 1, 2, 3, 4, 5 ]} gap={[ 5, 10, 20 ]}>
+			<SimpleGrid columns={[ 1, 2, 3, 4, 5 ]} gap={[ 5, 10 ]}>
 				{grid()}
 			</SimpleGrid>
 		</Flex>

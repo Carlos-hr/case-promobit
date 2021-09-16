@@ -17,6 +17,9 @@ const MovieCard = (props) => {
 			borderRadius="lg"
 			overflow="hidden"
 			onClick={() => onClick(results.id)}
+			ml={5}
+			mr={5}
+			mb={5}
 		>
 			<Image src={`${POSTER_URL}${results.poster_path}`} alt={results.title} fallbackSrc={fallback} />
 			<Box p="2">

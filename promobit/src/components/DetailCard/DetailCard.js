@@ -1,4 +1,4 @@
-import { Flex, Text } from '@chakra-ui/layout';
+import { Flex, Text, Container } from '@chakra-ui/layout';
 import { Box, Heading, Image, Spinner } from '@chakra-ui/react';
 import React from 'react';
 import 'react-multi-carousel/lib/styles.css';
@@ -6,7 +6,6 @@ import { useParams } from 'react-router';
 import { BASE_URL, POSTER_URL } from '../../constants/urls';
 import useRequestData from '../../hooks/useRequestData';
 import MovieCarousel from '../MovieCarousel/MovieCarousel';
-import { Main } from './styled';
 import { StarIcon } from '@chakra-ui/icons';
 import fallback from '../../assets/fallback.png';
 
@@ -17,11 +16,10 @@ const DetailCard = () => {
 	const movieDetail = useRequestData(`${BASE_URL}/${id}`, []);
 	const relatedMovies = useRequestData(`${BASE_URL}/${id}/similar`, []);
 	const { data } = movieDetail;
-	console.log('data', data);
 	const { results } = relatedMovies.data;
 	const details = () => {
 		return data ? (
-			<Main maxW="container.lg">
+			<Container maxW="container.lg">
 				<Flex justify="space-between" mt={10}>
 					<Image
 						width="10rem"
@@ -54,7 +52,7 @@ const DetailCard = () => {
 						</Box>
 					</Box>
 				</Flex>
-			</Main>
+			</Container>
 		) : (
 			<Spinner />
 		);

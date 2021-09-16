@@ -1,18 +1,17 @@
 import { Text } from '@chakra-ui/react';
 import React from 'react';
 import { useHistory } from 'react-router';
-import { secondary } from '../../constants/colors';
 import { goToHome } from '../../routes/coordinator';
-import { Main } from './styled';
+import { Container } from '@chakra-ui/layout';
 
 const Header = () => {
 	const history = useHistory();
 	return (
-		<Main>
-			<Text fontSize="2xl" color={secondary} as="button" onClick={() => goToHome(history)}>
+		<Container bgColor="blackAlpha.800" maxW="100%" height="10vh">
+			<Text fontSize="2xl" color="blue.300" as="button" onClick={() => goToHome(history)}>
 				Logo
 			</Text>
-		</Main>
+		</Container>
 	);
 };
 

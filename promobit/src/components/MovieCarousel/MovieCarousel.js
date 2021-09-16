@@ -2,15 +2,14 @@ import React from 'react';
 import 'react-multi-carousel/lib/styles.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Flex, Spinner, Text } from '@chakra-ui/react';
-import { Main } from './styled';
+import { Flex, Spinner, Text, Container } from '@chakra-ui/react';
 import { useHistory } from 'react-router';
 import { goToMovieDetails, goToMoviesPage } from '../../routes/coordinator';
 import MovieCard from '../MovieCard/MovieCard';
 import { Button } from '@chakra-ui/button';
 
 const MovieCarousel = (props) => {
-	const { results, title, category, hasButton } = props;
+	const { results, title, category, viewMore } = props;
 	const history = useHistory();
 
 	const onClickDetails = (id) => {
@@ -19,6 +18,7 @@ const MovieCarousel = (props) => {
 	const onClickViewMore = (category) => {
 		goToMoviesPage(history, category);
 	};
+
 	const poster = () => {
 		return results ? (
 			results.map((movie) => {
@@ -28,8 +28,8 @@ const MovieCarousel = (props) => {
 			<Spinner />
 		);
 	};
-	const renderButton = () => {
-		if (hasButton) {
+	const renderViewMore = () => {
+		if (viewMore) {
 			return (
 				<Button variant="link" size="sm" colorScheme="blue" onClick={() => onClickViewMore(category)} ml={3}>
 					Ver mais
@@ -39,10 +39,10 @@ const MovieCarousel = (props) => {
 	};
 
 	return (
-		<Main>
+		<Container maxW="100%" mt={10} mb={10} justify="space-between">
 			<Flex mb={2} ml={5}>
 				<Text fontWeight="bold">{title}</Text>
-				{renderButton()}
+				{renderViewMore()}
 			</Flex>
 			<Carousel
 				additionalTransfrom={0}
@@ -57,35 +57,52 @@ const MovieCarousel = (props) => {
 				responsive={{
 					desktop: {
 						breakpoint: {
-							max: 3000,
+							max: 1400,
 							min: 1024
 						},
 						items: 7.5,
 						slidesToSlide: 4,
 						partialVisibilityGutter: 40
 					},
-					mobile: {
+					mobileS: {
 						breakpoint: {
-							max: 464,
+							max: 340,
 							min: 0
 						},
-						items: 2,
+						items: 1,
 						partialVisibilityGutter: 30
+					},
+					mobile: {
+						breakpoint: {
+							max: 500,
+							min: 340
+						},
+						items: 2,
+						partialVisibilityGutter: 0
 					},
 					tablet: {
 						breakpoint: {
 							max: 1024,
-							min: 464
+							min: 500
 						},
 						items: 3.5,
 						slidesToSlide: 2,
 						partialVisibilityGutter: 30
-					}
+					},
+					laptopL: {
+						breakpoint: {
+							max: 1260,
+							min: 1024
+						},
+						items: 6.5,
+						slidesToSlide: 2,
+						partialVisibilityGutter: 30
+					},
 				}}
 			>
 				{poster()}
 			</Carousel>
-		</Main>
+		</Container>
 	);
 };
 

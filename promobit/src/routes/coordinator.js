@@ -4,7 +4,7 @@ export const goToMovieDetails = (history, id) => {
 
 export const goToMoviesPage = (history, category, page) => {
 	if (!page) {
-		page = 1
+		page = 1;
 	}
 	history.push(`/movies/${category}/${page}`);
 };
@@ -15,7 +15,14 @@ export const goToHome = (history) => {
 
 export const goToSearchPage = (history, movie, page) => {
 	if (!page) {
-		page = 1
+		page = 1;
 	}
-	history.push(`/search/${movie}/${page}`)
-}
+	history.push(`/search/${movie}/${page}`);
+};
+
+export const goToGenresPage = (history, id, page) => {
+	if (!page) {
+		page = 1;
+	}
+	history.push(`/genres/${id}/${page}`);
+};

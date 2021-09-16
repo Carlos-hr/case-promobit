@@ -3,7 +3,6 @@ import { BASE_URL } from "../constants/urls";
 import useRequestData from "../hooks/useRequestData";
 import GlobalStateContext from './GlobalStateContext'
 
-
 const GlobalState = (props) => {
     const popMovies = useRequestData(`${BASE_URL}/popular`, [])
     const topRatedMovies = useRequestData(`${BASE_URL}/top_rated`, [])

@@ -31,6 +31,6 @@ const Paging = (props) => {
 			</Button>
 		);
 	};
-	return <Center>{renderButton()}</Center>;
+	return <Center mt={10} mb={10}>{renderButton()}</Center>;
 };
 export default Paging;

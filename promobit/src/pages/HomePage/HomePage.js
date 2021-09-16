@@ -3,6 +3,7 @@ import MovieCarousel from '../../components/MovieCarousel/MovieCarousel';
 import Header from '../../components/Header/Header';
 import SearchMovie from '../../components/SearchMovie/SearchMovie';
 import GlobalStateContext from '../../global/GlobalStateContext';
+import SideBar from '../../components/SideBar/SideBar';
 
 export const HomePage = () => {
 	const { popMovies, topRatedMovies } = useContext(GlobalStateContext);
@@ -13,9 +14,10 @@ export const HomePage = () => {
 	return (
 		<div>
 			<Header />
+			<SideBar/>
 			<SearchMovie />
-			<MovieCarousel results={pop} title={'Populares'} category={'popular'} hasButton />
-			<MovieCarousel results={topRated} title={'Melhores avaliados'} category={'top_rated'} hasButton />
+			<MovieCarousel results={pop} title={'Populares'} category={'popular'} viewMore />
+			<MovieCarousel results={topRated} title={'Melhores avaliados'} category={'top_rated'} viewMore />
 		</div>
 	);
 };

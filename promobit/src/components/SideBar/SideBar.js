@@ -6,18 +6,23 @@ import { Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, Skeleto
 import { useDisclosure } from '@chakra-ui/hooks';
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { Flex, ListItem, UnorderedList } from '@chakra-ui/layout';
-import { useHistory } from 'react-router';
-import { goToGenresPage } from '../../routes/coordinator';
 
 const SideBar = (props) => {
-	const history = useHistory();
 	const allGenres = useRequestData(`${GENRES_URL}`, []);
 	const { isOpen, onOpen, onClose } = useDisclosure();
+	const { setFilter, setId } = props.setters;
+	const { genres } = allGenres.data;
 
 	const onClickGenre = (id) => {
-		goToGenresPage(history, id);
+		setFilter(true);
+		setId(id);
+		onClose();
 	};
-	const { genres } = allGenres.data;
+
+	const onClickClearFilters = () => {
+		setFilter(false);
+		onClose();
+	};
 	const renderGenres = () => {
 		return genres ? (
 			genres.map((genre) => {
@@ -52,6 +57,16 @@ const SideBar = (props) => {
 							onClick={onClose}
 						/>
 					</Flex>
+					<Button
+						variant="link"
+						colorScheme="blue"
+						size="xs"
+						mt={5}
+						pos="left"
+						onClick={() => onClickClearFilters()}
+					>
+						Limpar filtros
+					</Button>
 					<DrawerBody>{renderGenres()}</DrawerBody>
 				</DrawerContent>
 			</Drawer>

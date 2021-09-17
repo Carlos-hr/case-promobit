@@ -5,7 +5,6 @@ import MoviesPage from '../pages/MoviesPage/MoviesPage';
 import DetailsPage from '../pages/DetailsPage/DetailsPage';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import SearchPage from '../pages/SearchPage/SearchPage';
-import GenresPage from '../pages/GenresPage/GenresPage';
 
 export const Router = () => {
 	return (
@@ -27,9 +26,6 @@ export const Router = () => {
 					<SearchPage />
 				</Route>
 
-				<Route exact path="/genres/:id/:page">
-					<GenresPage />
-				</Route>
 				<Route>
 					<ErrorPage />
 				</Route>

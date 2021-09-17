@@ -20,9 +20,3 @@ export const goToSearchPage = (history, movie, page) => {
 	history.push(`/search/${movie}/${page}`);
 };
 
-export const goToGenresPage = (history, id, page) => {
-	if (!page) {
-		page = 1;
-	}
-	history.push(`/genres/${id}/${page}`);
-};

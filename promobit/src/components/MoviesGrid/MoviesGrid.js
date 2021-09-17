@@ -23,10 +23,12 @@ const MovieGrid = (props) => {
 			</SimpleGrid>
 		) : results !== undefined ? (
 			<Center maxW="lg">
-				<Alert status="error" borderRadius="10">
-					<AlertIcon />
-					<AlertTitle>Filme não encontrado!</AlertTitle>
-					<AlertDescription>
+				<Alert status="error" borderRadius="10" flexDirection="column">
+					<Flex mt={5}>
+						<AlertIcon />
+						<AlertTitle>Filme não encontrado!</AlertTitle>
+					</Flex>
+					<AlertDescription mb={5}>
 						Não foi encontrado nenhum filme correspondente, faça uma nova busca ou procure nas próximas
 						páginas.
 					</AlertDescription>

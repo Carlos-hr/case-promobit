@@ -1,13 +1,16 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import React from "react";
-import Router from "./routes/Router";
+import { ChakraProvider } from '@chakra-ui/react';
+import React from 'react';
+import GlobalState from './global/GlobalState';
+import Router from './routes/Router';
 
-function App() {
-  return (
-    <ChakraProvider>
-      <Router />
-    </ChakraProvider>
-  );
-}
+const App = () => {
+	return (
+		<GlobalState>
+			<ChakraProvider>
+				<Router />
+			</ChakraProvider>
+		</GlobalState>
+	);
+};
 
 export default App;

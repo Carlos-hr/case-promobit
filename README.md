@@ -1,11 +1,5 @@
 # Case Promobit
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
-
 > Projeto realizado utilizando ReactJs consumindo a API TheMovieDB com o intuito de exibir o filmes populares do dia, oferecer ao usuário pesquisar por nome do filme e também
 filtrar de acordo com as categorias.
 
@@ -28,5 +22,5 @@ Faça o clone desse repositório em seu computador e execute o comando:
 `npm install` e `npm run start`.
 
 ## Página da aplicação
-<a href="case-promobit.surge.sh">Case Promobit </a> 
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
+<a href="http://www.case-promobit.surge.sh">Case Promobit </a> 
+

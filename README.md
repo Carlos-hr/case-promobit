@@ -9,7 +9,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Adição de carousel com filmes populares, searchBar e página de detalhes dos filmes;
 - [x] Adição sidebar para filtro de resultados;
 - [x] Adição de grid na página de detalhes;
-- [ ] Estilização das páginas e ajuste na responsividade em telas grandes;
+- [x] Ajuste na responsividade em telas grandes;
+- [ ] Estilização das páginas;
 - [ ] Correção de bug nos filtros para que possa ser escolhido mais de um filtro
 
 ## :robot: Tecnologias: 

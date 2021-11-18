@@ -57,7 +57,7 @@ const MovieCarousel = (props) => {
 				responsive={{
 					desktop: {
 						breakpoint: {
-							max: 1400,
+							max: 3000,
 							min: 1024
 						},
 						items: 7.5,

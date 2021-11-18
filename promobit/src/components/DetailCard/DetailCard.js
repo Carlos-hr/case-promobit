@@ -19,7 +19,7 @@ const DetailCard = () => {
 	const { results } = relatedMovies.data;
 	const details = () => {
 		return data ? (
-			<Container maxW="container.lg">
+			<Container maxW="container.xl">
 				<Flex justify="space-between" mt={10}>
 					<Image
 						width="10rem"

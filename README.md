@@ -23,9 +23,9 @@ Projeto realizado utilizando ReactJs e consumindo a API da plataforma TheMovieDB
   <li>React Multi-carousel</li>
   <li>Dotenv</li>
 
-## 🚀 Instalando ##Case Promobit
+## 🚀 Instalando Case Promobit
 
-Para instalar o ##Case promobit, siga estas etapas:
+Para instalar o Case promobit, siga estas etapas:
 
 Faça o clone desse repositório em seu computador e execute o comando:
 

@@ -11,6 +11,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Adição de grid na página de detalhes;
 - [x] Ajuste na responsividade em telas grandes;
 - [ ] Estilização das páginas;
+- [ ] Tratamento de erros;
 - [ ] Correção de bug nos filtros para que possa ser escolhido mais de um filtro
 
 ## :robot: Tecnologias: 
